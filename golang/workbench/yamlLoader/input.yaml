@@ -1,0 +1,86 @@
+feature:
+  featureName:
+    customDimensions:
+      featureCategory: data classification
+      dbKey:
+        - n_custom_dimensions
+        - n_populators
+      test: A custom dimension is considered in use when it has one or more populators in it. Custom Dimensions feature considered in use when there's at least one custom dimension in use according to the test above.
+    dashboards:
+      featureCategory: base
+      dbKey:
+        - n_dashboards
+      test: feature active if > 0
+    savedFilters:
+      featureCategory: data classification
+      dbKey:
+        - n_dashboards
+      test: feature active if > 0
+    interfaceClassification:
+      featureCategory: data classification
+      dbKey:
+        - n_rules
+        - pct_interfaces_classified
+      test: feature active if both > 0
+    twoFactorAuth:
+      featureCategory: security
+      dbKey:
+        - n_users_2fs_enabled
+      test: feature active if > 0
+    userBasedFilters:
+      featureCategory: security
+      dbKey:
+        - n_users_filter_on_them
+      test: feature active if > 0
+    Alerting:
+      featureCategory: alerting & mitigation
+      dbKey:
+        - n_v3_alerting_policies_enabled
+      test: feature active if > 0
+    Tags:
+      featureCategory: data classifications
+      dbKey:
+        - n_tags
+      test: feature active if > 0
+    dashboardSubscriptions:
+      featureCategory: tmp holder
+      dbKey:
+        - n_dashboard_subscriptions
+      test: feature active if > 0
+    peeringAnalytics:
+      featureCategory: peering analysis
+      dbKey:
+        - n_peering_reports
+      test: feature active if > 0
+    peeringReportsSubscription:
+      featureCategory: peering analysis
+      dbKey:
+        - n_peering_report_subscriptions
+      test: feature active if > 0
+    DDoSMitigation:
+      featureCategory: alerting & mitigation
+      dbKey:
+        - n_policies_with_mitigations
+        - n_mitigation_platforms
+      test: feature active if both > 0
+    APICrud:
+      featureCategory: api
+      dbKey:
+        - n_api_calls_admin
+      test: feature active if > 0
+    APIDataQueries:
+      featureCategory: api
+      dbKey:
+        - n_api_queries_non_psql
+        - n_api_queries_psql
+      test: acive if sum(queries_non_psql or queries_psql) >0
+    ACLs:
+      featureCategory: security
+      dbKey:
+        - n_different_acls
+      test: tmp holder
+    KentikAgent:
+      featureCategory: base
+      dbKey:
+        - n_devices_agent
+      test: feature active if > 0
