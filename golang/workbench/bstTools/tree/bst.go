@@ -33,6 +33,8 @@ func (t *Tree) Insert(val int) {
 }
 
 func insert(val int, node *Node) {
+	// this can be refactored to check base case first (node == nil)
+	// and then add node, otherwise recurse.
 	if val >= node.Value {
 		if node.Right != nil {
 			insert(val, node.Right)
