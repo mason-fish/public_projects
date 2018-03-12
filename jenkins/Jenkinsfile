@@ -1,0 +1,20 @@
+pipeline {
+  agent { docker 'golang:1.9.1-alpine3.6' }
+  stages {
+    stage('test') {
+      steps {
+        sh 'go test ./...'
+      }
+    }
+  }
+  post {
+    always {
+      echo 'Finished.'
+    }
+    success {
+      echo 'Test passed.'
+    }
+    failure {
+      echo 'Test failed.'
+    }
+  }
