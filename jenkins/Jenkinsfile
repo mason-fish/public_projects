@@ -1,4 +1,6 @@
-pipeline {
+node {
+  checkout scm
+
   agent { docker 'golang:1.9.1-alpine3.6' }
   stages {
     stage('test') {
