@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  test1:
+    image: ubuntu:latest
+    volumes: # here is the mount point
+      - .:/new/directory
+    depends_on: # this is just fun dependency stuff
+      - test2
+    command: ["sleep", "1000"] # this ensures that the container will keep running
+  test2:
+    image: ubuntu:latest
+    command: ["sleep", "1000"]
+
+# this is just an example docker-compose that mounts a drive in one container but not the other
